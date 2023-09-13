@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <style name="ButtonNoBorder" parent="Widget.AppCompat.Button">-->
+<!--        <item name="android:background">@null</item>-->
+<!--    </style>-->
+    <style name="Base.Theme.DataChallenge." parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Otros atributos de estilo aquí -->
+        <item name="android:fontFamily">@font/alkessemibd</item>
+    </style>
+    <style name="ToastStyle">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimaryLight</item>
+    </style>
+
+</resources>
