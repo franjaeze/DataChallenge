@@ -18,6 +18,7 @@ import com.example.datachallenge.R
 
 class LoginFragment : Fragment() {
     lateinit var v: View;
+    val users: Array<String> = arrayOf("fveron@gmail.com", "hola@mundo.com", "taller@progrmacion.com")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +41,13 @@ class LoginFragment : Fragment() {
             // el text es para obtener el valor del campo, y luego lo parceo a String
 
             val user: String = "fveron@gmail.com";
+
+//            for (elemento in users) {
+//                if (elemento == textoAComparar) {
+//                    println("El texto coincide con un elemento del array.")
+//                    break // Puedes usar break para salir del bucle si se encuentra una coincidencia
+//                }
+//            }
             if(f==user){
                 val userEmail = Email(f); // asi se instancia una clase en kl, sin el new.Ojo que la debo importar antes
                 val action = LoginFragmentDirections.actionLoginFragmentToDataFragment(userEmail)
@@ -49,6 +57,7 @@ class LoginFragment : Fragment() {
                 val duration = Toast.LENGTH_SHORT
                 val toast = Toast.makeText(activity, text, duration) // in Activity
                 toast.setGravity(Gravity.CENTER, 0, 750);
+
                 toast.show()
 
 
@@ -58,7 +67,7 @@ class LoginFragment : Fragment() {
                 builder.setPositiveButton("Aceptar") { dialog, which ->
                     // Código a ejecutar cuando se hace clic en "Aceptar"
                 }
-
+    //snackbar
                 val alertDialog: AlertDialog = builder.create()
                 // Establecer la gravedad para centrar el AlertDialog
 //                val window = alertDialog.window

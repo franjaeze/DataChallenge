@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#C02323</color>
-    <color name="colorLightGrey">#777777</color>
+    <color name="colorLightGrey">#CECECE</color>
     <color name="colorPrimaryLight">#CFCBCB</color>
     <color name="colorPrimaryDark">#0B0504</color>
     <color name="colorAccent">#FBF6F8</color>
+    <color name="colorLightBlue">#A8CED6</color>
+    <color name="colorGrey">#CECECE</color>
     <!-- Otros colores personalizados aquí -->
 </resources>

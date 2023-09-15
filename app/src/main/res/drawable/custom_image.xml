@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <stroke android:color="@color/colorLightGrey" android:width="2dp"/>
+    <solid android:color="#00EFECEC" /><!-- Color de fondo (puede ser transparente) -->
+    <corners android:radius="500dp" /> <!-- Radio del borde para lograr la forma redondeada -->
+</shape>
