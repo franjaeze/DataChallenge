@@ -46,7 +46,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 
-
+    //glide for image
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 
     // para el jetpack navigation
     val nav_version = "2.5.3"

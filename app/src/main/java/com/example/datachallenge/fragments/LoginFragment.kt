@@ -1,6 +1,7 @@
 package com.example.datachallenge.fragments
 
 import android.app.AlertDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -9,11 +10,14 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.compose.ui.res.colorResource
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.datachallenge.Email
 import com.example.datachallenge.R
+import com.google.android.material.snackbar.Snackbar
 
 
 class LoginFragment : Fragment() {
@@ -53,30 +57,31 @@ class LoginFragment : Fragment() {
                 val action = LoginFragmentDirections.actionLoginFragmentToDataFragment(userEmail)
                 v.findNavController().navigate(action)
             } else {
+
+                // toast
                 val text = "Credenciales incorrectas!"
                 val duration = Toast.LENGTH_SHORT
-                val toast = Toast.makeText(activity, text, duration) // in Activity
-                toast.setGravity(Gravity.CENTER, 0, 750);
+//                val toast = Toast.makeText(activity, text, duration) // in Activity
+//                toast.setGravity(Gravity.CENTER, 0, 750);
+//                toast.show()
 
-                toast.show()
+  // ALTER DIALOG
+//                val builder = AlertDialog.Builder(activity, androidx.transition.R.style.Base_V21_ThemeOverlay_AppCompat_Dialog)
+//                builder.setTitle("Credenciales incorrectas!")
+//                builder.setMessage(" Por favor, inténtalo de nuevo.")
+//                builder.setPositiveButton("Aceptar") { dialog, which ->
+//                    // Código a ejecutar cuando se hace clic en "Aceptar"
+//                }
+//                val alertDialog: AlertDialog = builder.create()
+//                alertDialog.show()
 
-
-                val builder = AlertDialog.Builder(activity, androidx.transition.R.style.Base_V21_ThemeOverlay_AppCompat_Dialog)
-                builder.setTitle("Credenciales incorrectas!")
-                builder.setMessage(" Por favor, inténtalo de nuevo.")
-                builder.setPositiveButton("Aceptar") { dialog, which ->
-                    // Código a ejecutar cuando se hace clic en "Aceptar"
-                }
-    //snackbar
-                val alertDialog: AlertDialog = builder.create()
-                // Establecer la gravedad para centrar el AlertDialog
-//                val window = alertDialog.window
-//                val layoutParams = WindowManager.LayoutParams()
-//                layoutParams.gravity = Gravity.CENTER
-//                window?.attributes = layoutParams
-                alertDialog.show()
+                //snackbar
+                val snackbar = Snackbar.make(v,text,duration)
+                snackbar.setTextColor(Color.WHITE)
+                snackbar.setBackgroundTint(getResources().getColor(R.color.colorPrimary))
 
 
+                snackbar.show()
 
 
 
