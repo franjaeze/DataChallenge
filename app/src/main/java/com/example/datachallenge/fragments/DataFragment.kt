@@ -39,17 +39,27 @@ class DataFragment : Fragment(), OnClickNavigate {
     }
 
     override fun onStart() {
+        val conversation:MutableList<String> = mutableListOf()
+
+        for (i in 1..10) {
+            conversation.add("Miauuuuu....")
+            conversation.add("Miiiiiiiiiiiiau")
+            conversation.add("Mmmmm aaaaaauuuu")
+            conversation.add("Miau miau miaaaau miau")
+        }
+
+
         super.onStart()
-        contacts.add(Contact("Alex","tell me something",2, "https://loremflickr.com/320/240?random=1"))
-        contacts.add(Contact("Marina","Hey estoy abajo!",15, "https://loremflickr.com/320/240?random=2"))
-        contacts.add(Contact("Pietro","buenismo, hasta luego",27, "https://loremflickr.com/320/240?random=3"))
-        contacts.add(Contact("Nova","no, no creo",32, "https://loremflickr.com/320/240?random=4"))
-        contacts.add(Contact("Amanda","hasta luego, buen finde",60, "https://loremflickr.com/320/240?random=5"))
-        contacts.add(Contact("Sergi","y donde se supone que voy a encontrarlo?",2, "https://loremflickr.com/320/240?random=6"))
-        contacts.add(Contact("Dario","nos falta 1",2, "https://loremflickr.com/320/240?random=7"))
-        contacts.add(Contact("Samantha","de Finibus Bonorum et Malorum",2, "https://loremflickr.com/320/240?random=8"))
-        contacts.add(Contact("Flor","to help keep the site on the Internet, please consider donating a small",2, "https://loremflickr.com/320/240?random=9"))
-        contacts.add(Contact("Giulia","hasta luego, buen finde",2, "https://loremflickr.com/320/240?random=10"))
+        contacts.add(Contact("Alex","tell me something",2, "https://loremflickr.com/320/240?random=1",124354554, conversation))
+        contacts.add(Contact("Marina","Hey estoy abajo!",15, "https://loremflickr.com/320/240?random=2",43254114, conversation))
+        contacts.add(Contact("Pietro","buenismo, hasta luego",27, "https://loremflickr.com/320/240?random=3",49824354, conversation))
+        contacts.add(Contact("Nova","no, no creo",32, "https://loremflickr.com/320/240?random=4",116573554, conversation))
+        contacts.add(Contact("Amanda","hasta luego, buen finde",60, "https://loremflickr.com/320/240?random=5",24201884, conversation))
+        contacts.add(Contact("Sergi","y donde se supone que voy a encontrarlo?",2, "https://loremflickr.com/320/240?random=6",22431845, conversation))
+        contacts.add(Contact("Dario","nos falta 1",2, "https://loremflickr.com/320/240?random=7",23121554, conversation))
+        contacts.add(Contact("Samantha","de Finibus Bonorum et Malorum",2, "https://loremflickr.com/320/240?random=8",5216254, conversation))
+        contacts.add(Contact("Flor","to help keep the site on the Internet, please consider donating a small",2, "https://loremflickr.com/320/240?random=9",11365755, conversation))
+        contacts.add(Contact("Giulia","hasta luego, buen finde",2, "https://loremflickr.com/320/240?random=10",545144388, conversation))
 
         val userEmail = DataFragmentArgs.fromBundle(requireArguments()).user
               //DataFragmentArgs se crea solo al marcar que recibe parametros x el NavGraph

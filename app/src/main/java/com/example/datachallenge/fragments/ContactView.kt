@@ -8,8 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.datachallenge.R
+import com.example.datachallenge.adapter.DataModelAdapter
 import com.example.datachallenge.entity.Contact
 
 
@@ -39,9 +42,24 @@ class ContactView : Fragment() {
         val tvName = v.findViewById<TextView>(R.id.tvName1); // ubico el textView
         val tvMsg = v.findViewById<TextView>(R.id.tvMsg1); // ubico el textView
         val contactPic = v.findViewById<ImageView>(R.id.contactPic); // ubico el textView
+        val phone = v.findViewById<TextView>(R.id.phone)
 
         tvName.setText(contact.name.toString())  // ojo aca con el toString!!!!
         tvMsg.setText(contact.msj.toString())  // ojo aca con el toString!!!!
         Glide.with(contactPic.context).load(contact.urlImage).circleCrop().into(contactPic)
+        phone.setText("Tel: +54" + contact.phone.toString())
+
+
+        val recyclerView = v.findViewById<RecyclerView>(R.id.recycleView2)
+        val messages = contact.conversation // Tu lista de mensajes
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = DataModelAdapter(messages)
+
+
+
+
+
+
     }
 }

@@ -3,7 +3,12 @@ package com.example.datachallenge.entity
 import android.os.Parcel
 import android.os.Parcelable
 
-data class Contact(val name:String?, val msj:String?,val time:Int?, val urlImage:String?):Parcelable {
+data class Contact(val name:String?,
+                   val msj:String?,
+                   val time:Int?,
+                   val urlImage:String?,
+                   val phone:Int?,
+                   val conversation:MutableList<String>):Parcelable {
 //    var name: String = ""
 //    var msj: String= ""
 //    var time: Int = 0
@@ -12,9 +17,12 @@ data class Contact(val name:String?, val msj:String?,val time:Int?, val urlImage
        parcel.readString(),
         parcel.readString(),
         parcel.readInt(),
-        parcel.readString()
-    ) {
+        parcel.readString(),
+        parcel.readInt(),
+        mutableListOf<String>().apply {
+        parcel.readList(this, String::class.java.classLoader)
     }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/custom_rectangle"
+    android:layout_marginTop="15dp"
+    android:layout_marginHorizontal="20dp"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tvMsgList"
+        android:layout_width="187dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/colorLightBlue"
+        android:textColor="@color/colorMsg"
+        android:textSize="14dp"
+        android:fontFamily="@font/ubunturegular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvMsgTime"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="Mensaje de texto" />
+
+    <TextView
+        android:id="@+id/tvMsgTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorLightBlue"
+        android:gravity="center"
+        android:paddingEnd="20dp"
+        android:text="2 Min."
+        android:textAlignment="center"
+        android:textColor="@color/colorGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2 Min." />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
