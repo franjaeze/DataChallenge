@@ -25,13 +25,32 @@
         android:layout_width="187dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginBottom="7dp"
         android:backgroundTint="@color/colorLightBlue"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvMsg"
         app:layout_constraintEnd_toStartOf="@+id/tvTime"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toEndOf="@+id/tvPhoto"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Hola, Bienvenido al recycler view !!" />
+        app:layout_constraintVertical_bias="0.769"
+        android:textStyle="bold"
+        tools:text="Nombre de Contacto" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="187dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="@color/colorLightBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvTime"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toEndOf="@+id/tvPhoto"
+        app:layout_constraintTop_toTopOf="@+id/tvText"
+        app:layout_constraintVertical_bias="0.824"
+        tools:text="Mensaje de texto"
+        android:textSize="12dp"
+        android:textColor="@color/colorMsg"/>
 
     <TextView
         android:id="@+id/tvTime"
