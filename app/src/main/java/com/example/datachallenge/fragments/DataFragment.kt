@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -61,13 +64,21 @@ class DataFragment : Fragment(), OnClickNavigate {
         contacts.add(Contact("Flor","to help keep the site on the Internet, please consider donating a small",2, "https://loremflickr.com/320/240?random=9",11365755, conversation))
         contacts.add(Contact("Giulia","hasta luego, buen finde",2, "https://loremflickr.com/320/240?random=10",545144388, conversation))
 
-        val userEmail = DataFragmentArgs.fromBundle(requireArguments()).user
+        val userLogin = DataFragmentArgs.fromBundle(requireArguments()).user
               //DataFragmentArgs se crea solo al marcar que recibe parametros x el NavGraph
 
         val tvEmail = v.findViewById<TextView>(R.id.textView5); // ubico el textView
 
-        tvEmail.setText(userEmail.email.toString())  // ojo aca con el toString!!!!
+        tvEmail.setText(userLogin.name.toString())  // ojo aca con el toString!!!!
         initRecycleView()
+
+
+        val btnUser = v.findViewById<Button>(R.id.btnUser)
+
+        btnUser.setOnClickListener{
+            val action = DataFragmentDirections.actionDataFragmentToFragmentUser(userLogin)
+            v.findNavController().navigate(action)
+        }
     }
 
     private fun initRecycleView(){
@@ -84,6 +95,8 @@ class DataFragment : Fragment(), OnClickNavigate {
          val action = DataFragmentDirections.actionDataFragmentToContactView(contact)
         this.findNavController().navigate(action)
     }
+
+
 
 
 

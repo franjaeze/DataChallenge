@@ -21,10 +21,13 @@
         tools:layout="@layout/fragment_data" >
         <argument
             android:name="user"
-            app:argType="com.example.datachallenge.Email" />
+            app:argType="com.example.datachallenge.entity.User" />
         <action
             android:id="@+id/action_dataFragment_to_contactView"
             app:destination="@id/contactView" />
+        <action
+            android:id="@+id/action_dataFragment_to_fragment_user"
+            app:destination="@id/fragment_user" />
     </fragment>
     <fragment
         android:id="@+id/contactView"
@@ -34,5 +37,14 @@
         <argument
             android:name="contact"
             app:argType="com.example.datachallenge.entity.Contact" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_user"
+        android:name="com.example.datachallenge.fragments.fragment_user"
+        android:label="fragment_user2"
+        tools:layout="@layout/fragment_user" >
+        <argument
+            android:name="user"
+            app:argType="com.example.datachallenge.entity.User" />
     </fragment>
 </navigation>

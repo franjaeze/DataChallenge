@@ -17,11 +17,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.datachallenge.Email
 import com.example.datachallenge.R
+import com.example.datachallenge.entity.User
+import com.example.datachallenge.entity.UserList
 import com.google.android.material.snackbar.Snackbar
 
 
 class LoginFragment : Fragment() {
     lateinit var v: View;
+
     val users: Array<String> = arrayOf("fveron@gmail.com", "hola@mundo.com", "taller@progrmacion.com")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,22 +44,31 @@ class LoginFragment : Fragment() {
         val b = v.findViewById<Button>(R.id.loginBtn)
 
         b.setOnClickListener{
-            val f = v.findViewById<EditText>(R.id.username).text.toString();
+            val userInput = v.findViewById<EditText>(R.id.username).text.toString();
             // el text es para obtener el valor del campo, y luego lo parceo a String
+            val passInput = v.findViewById<EditText>(R.id.password).text.toString();
 
-            val user: String = "fveron@gmail.com";
+            var i = 0;
+            var userLogin: User
+            var credentials:Boolean = false
+            while (!credentials && i < UserList.users.size) {
 
-//            for (elemento in users) {
-//                if (elemento == textoAComparar) {
-//                    println("El texto coincide con un elemento del array.")
-//                    break // Puedes usar break para salir del bucle si se encuentra una coincidencia
-//                }
-//            }
-            if(f==user){
-                val userEmail = Email(f); // asi se instancia una clase en kl, sin el new.Ojo que la debo importar antes
-                val action = LoginFragmentDirections.actionLoginFragmentToDataFragment(userEmail)
-                v.findNavController().navigate(action)
-            } else {
+                val user = UserList.users[i]
+                if (user.name == userInput && user.password == passInput) {
+                    credentials = true;
+                    val userLogin = user; // asi se instancia una clase en kl, sin el new.Ojo que la debo importar antes
+                    //val action = LoginFragmentDirections.actionLoginFragmentToDataFragment(userEmail)
+                    val action = LoginFragmentDirections.actionLoginFragmentToDataFragment(userLogin)
+                    v.findNavController().navigate(action)
+
+                } else{
+                    i++
+                }
+            }
+
+
+
+            if(!credentials){
 
                 // toast
                 val text = "Credenciales incorrectas!"
