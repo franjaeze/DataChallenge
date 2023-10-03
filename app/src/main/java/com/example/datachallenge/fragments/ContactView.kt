@@ -36,7 +36,7 @@ class ContactView : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        val contact = ContactViewArgs.fromBundle(requireArguments()).contact
+        val personaje = ContactViewArgs.fromBundle(requireArguments()).personaje
         //DataFragmentArgs se crea solo al marcar que recibe parametros x el NavGraph
 
         val tvName = v.findViewById<TextView>(R.id.tvName1); // ubico el textView
@@ -44,14 +44,14 @@ class ContactView : Fragment() {
         val contactPic = v.findViewById<ImageView>(R.id.contactPic); // ubico el textView
         val phone = v.findViewById<TextView>(R.id.phone)
 
-        tvName.setText(contact.name.toString())  // ojo aca con el toString!!!!
-        tvMsg.setText(contact.msj.toString())  // ojo aca con el toString!!!!
-        Glide.with(contactPic.context).load(contact.urlImage).circleCrop().into(contactPic)
-        phone.setText("Tel: +54" + contact.phone.toString())
+        tvName.setText(personaje.name.toString())  // ojo aca con el toString!!!!
+        tvMsg.setText(personaje.created.toString())  // ojo aca con el toString!!!!
+        Glide.with(contactPic.context).load(personaje.image).circleCrop().into(contactPic)
+        phone.setText("Id: " + personaje.id.toString())
 
 
         val recyclerView = v.findViewById<RecyclerView>(R.id.recycleView2)
-        val messages = contact.conversation // Tu lista de mensajes
+        val messages = personaje.episode // Tu lista de mensajes
 
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = DataModelAdapter(messages)

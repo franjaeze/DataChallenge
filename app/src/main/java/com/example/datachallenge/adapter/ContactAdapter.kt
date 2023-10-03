@@ -22,9 +22,9 @@ class ContactAdapter (private val contacts:List<Contact>): RecyclerView.Adapter<
         var item = contacts[position]
         holder.render(item)
 
-        holder.itemView.setOnClickListener {
-            onContactClickListener?.OnClickNavigate(item)
-        }
+//        holder.itemView.setOnClickListener {
+//            onContactClickListener?.OnClickNavigate(item)
+//        }
     }
     fun setOnContactClickListener(listener: OnClickNavigate) {
         onContactClickListener = listener
