@@ -45,7 +45,7 @@ class ContactView : Fragment() {
         val phone = v.findViewById<TextView>(R.id.phone)
 
         tvName.setText(personaje.name.toString())  // ojo aca con el toString!!!!
-        tvMsg.setText(personaje.created.toString())  // ojo aca con el toString!!!!
+        tvMsg.setText("Created ${convertirFecha(personaje.created)}")  // ojo aca con el toString!!!!
         Glide.with(contactPic.context).load(personaje.image).circleCrop().into(contactPic)
         phone.setText("Id: " + personaje.id.toString())
 
@@ -61,5 +61,18 @@ class ContactView : Fragment() {
 
 
 
+    }
+
+    fun convertirFecha(fechaString: String): String {
+        val partes = fechaString.split("T")
+        val fecha = partes[0]
+        val tiempo = partes[1]
+
+        val partesFecha = fecha.split("-")
+        val dia = partesFecha[2]
+        val mes = partesFecha[1]
+        val anio = partesFecha[0]
+
+        return "$dia-$mes-$anio"
     }
 }

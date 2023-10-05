@@ -16,7 +16,7 @@ class PersonajeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val tvPhoto = view.findViewById<ImageView>(R.id.tvPhoto)
     fun render ( personaje: Personaje){
         tvText.text = personaje.name;
-        tvMsg.text = "${personaje.gender}  ${personaje.species}";
+        tvMsg.text = "${personaje.gender}  ${personaje.species}  from ${personaje.origin.name}";
         tvTime.text=  "${personaje.id} Id"
         Glide.with(tvPhoto.context).load(personaje.image).circleCrop().into(tvPhoto)
 

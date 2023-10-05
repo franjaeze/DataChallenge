@@ -134,7 +134,7 @@ class DataFragment : Fragment(), OnClickNavigate {
 
 //        recycleView.adapter = adapter;
         adapter = PersonajeAdapter(personajeList)
-            adapter.setOnPersonajeClickListener(this)
+        adapter.setOnPersonajeClickListener(this)
         recycleView.adapter = adapter
 
     }

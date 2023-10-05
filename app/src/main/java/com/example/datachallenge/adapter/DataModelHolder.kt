@@ -11,10 +11,15 @@ import com.example.datachallenge.R
 class DataModelHolder(val view: View):RecyclerView.ViewHolder(view) {
     val tvMsgList = view.findViewById<TextView>(R.id.tvMsgList)
     fun render ( dataModel: String){
-        tvMsgList.text = dataModel;
+        tvMsgList.text = "Episode ${cropEpisode(dataModel)}";
 
 
 
 
+    }
+
+    fun cropEpisode (episode:String): String{
+        val parts = episode.split("api/episode/")
+       return parts[1]
     }
 }
