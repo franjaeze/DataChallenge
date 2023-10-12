@@ -11,5 +11,21 @@
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorPrimaryLight</item>
     </style>
+    <style name="BottomNavigationStyle">
+        <item name="android:backgroundTint">@color/colorAccent</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="itemBackground">@color/colorAccent</item>
+
+    </style>
+    <style name="NavViewStyle" parent="Widget.Design.NavigationView">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="btnDrawer" parent="Widget.Design.NavigationView">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:radius">2dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 
 </resources>

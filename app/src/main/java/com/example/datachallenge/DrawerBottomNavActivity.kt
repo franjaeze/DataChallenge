@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.datachallenge.databinding.ActivityDrawerBottomNavBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DrawerBottomNavActivity : AppCompatActivity() {
 
@@ -39,6 +40,11 @@ class DrawerBottomNavActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -21,8 +21,10 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_drawer_bottom_nav" />
 
+
+
+    <include layout="@layout/content_drawer_bottom_nav" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
