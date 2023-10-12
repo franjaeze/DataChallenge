@@ -8,5 +8,6 @@
     <color name="colorAccent">#FBF6F8</color>
     <color name="colorLightBlue">#A8CED6</color>
     <color name="colorGrey">#CECECE</color>
+    <color name="cardBg">#F3F3F3</color>
     <!-- Otros colores personalizados aquí -->
 </resources>
